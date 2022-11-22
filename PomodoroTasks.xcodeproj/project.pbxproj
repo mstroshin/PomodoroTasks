@@ -11,6 +11,7 @@
 		DE49FD91292D1C4B00A38389 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49FD90292D1C4B00A38389 /* ContentView.swift */; };
 		DE49FD93292D1C4B00A38389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE49FD92292D1C4B00A38389 /* Assets.xcassets */; };
 		DE49FD96292D1C4B00A38389 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE49FD95292D1C4B00A38389 /* Preview Assets.xcassets */; };
+		DE49FD9E292D1CE100A38389 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49FD9D292D1CE100A38389 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,8 @@
 		DE49FD92292D1C4B00A38389 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE49FD95292D1C4B00A38389 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE49FD97292D1C4B00A38389 /* PomodoroTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroTasks.entitlements; sourceTree = "<group>"; };
+		DE49FD9D292D1CE100A38389 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE49FD9F292D2A6C00A38389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +55,9 @@
 		DE49FD8D292D1C4B00A38389 /* PomodoroTasks */ = {
 			isa = PBXGroup;
 			children = (
+				DE49FD9F292D2A6C00A38389 /* Info.plist */,
 				DE49FD8E292D1C4B00A38389 /* PomodoroTasksApp.swift */,
+				DE49FD9D292D1CE100A38389 /* AppDelegate.swift */,
 				DE49FD90292D1C4B00A38389 /* ContentView.swift */,
 				DE49FD92292D1C4B00A38389 /* Assets.xcassets */,
 				DE49FD97292D1C4B00A38389 /* PomodoroTasks.entitlements */,
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE49FD9E292D1CE100A38389 /* AppDelegate.swift in Sources */,
 				DE49FD91292D1C4B00A38389 /* ContentView.swift in Sources */,
 				DE49FD8F292D1C4B00A38389 /* PomodoroTasksApp.swift in Sources */,
 			);
@@ -274,6 +280,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PomodoroTasks/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,6 +309,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PomodoroTasks/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

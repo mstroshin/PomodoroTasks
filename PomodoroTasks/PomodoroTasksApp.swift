@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import AppKit
+import Foundation
 
 @main
 struct PomodoroTasksApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            EmptyView()
         }
     }
 }
