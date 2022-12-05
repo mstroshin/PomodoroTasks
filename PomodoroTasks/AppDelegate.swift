@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApplication.shared.windows.first?.close()
         
-        popover.contentViewController = NSHostingController(rootView: ContentView())
+        popover.contentViewController = NSHostingController(rootView: MainView())
         statusItem = statusBar.statusItem(withLength: NSStatusItem.variableLength)
         
         if let button = statusItem?.button {
