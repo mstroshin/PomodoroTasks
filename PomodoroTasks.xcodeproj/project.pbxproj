@@ -12,6 +12,9 @@
 		DE49FD93292D1C4B00A38389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE49FD92292D1C4B00A38389 /* Assets.xcassets */; };
 		DE49FD96292D1C4B00A38389 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE49FD95292D1C4B00A38389 /* Preview Assets.xcassets */; };
 		DE49FD9E292D1CE100A38389 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49FD9D292D1CE100A38389 /* AppDelegate.swift */; };
+		DEAF632729649E2B00557453 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = DEAF632629649E2B00557453 /* SwiftUINavigation */; };
+		DEAF632A2964A32B00557453 /* AddingNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF63292964A32B00557453 /* AddingNewTaskView.swift */; };
+		DEAF632C2964A33200557453 /* AddingNewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF632B2964A33200557453 /* AddingNewTaskViewModel.swift */; };
 		DEE6EAEC293E2D1B004BE13F /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE6EAEB293E2D1B004BE13F /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,8 @@
 		DE49FD97292D1C4B00A38389 /* PomodoroTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroTasks.entitlements; sourceTree = "<group>"; };
 		DE49FD9D292D1CE100A38389 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE49FD9F292D2A6C00A38389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DEAF63292964A32B00557453 /* AddingNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewTaskView.swift; sourceTree = "<group>"; };
+		DEAF632B2964A33200557453 /* AddingNewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewTaskViewModel.swift; sourceTree = "<group>"; };
 		DEE6EAEB293E2D1B004BE13F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEAF632729649E2B00557453 /* SwiftUINavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				DEE6EAEA293E2CF7004BE13F /* Main */,
+				DEAF63282964A31500557453 /* AddingNewTask */,
 				DE49FD9F292D2A6C00A38389 /* Info.plist */,
 				DE49FD8E292D1C4B00A38389 /* PomodoroTasksApp.swift */,
 				DE49FD9D292D1CE100A38389 /* AppDelegate.swift */,
@@ -74,6 +81,15 @@
 				DE49FD95292D1C4B00A38389 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DEAF63282964A31500557453 /* AddingNewTask */ = {
+			isa = PBXGroup;
+			children = (
+				DEAF63292964A32B00557453 /* AddingNewTaskView.swift */,
+				DEAF632B2964A33200557453 /* AddingNewTaskViewModel.swift */,
+			);
+			path = AddingNewTask;
 			sourceTree = "<group>";
 		};
 		DEE6EAEA293E2CF7004BE13F /* Main */ = {
@@ -101,6 +117,9 @@
 			dependencies = (
 			);
 			name = PomodoroTasks;
+			packageProductDependencies = (
+				DEAF632629649E2B00557453 /* SwiftUINavigation */,
+			);
 			productName = PomodoroTasks;
 			productReference = DE49FD8B292D1C4B00A38389 /* PomodoroTasks.app */;
 			productType = "com.apple.product-type.application";
@@ -129,6 +148,9 @@
 				Base,
 			);
 			mainGroup = DE49FD82292D1C4B00A38389;
+			packageReferences = (
+				DEAF632529649E2B00557453 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
 			productRefGroup = DE49FD8C292D1C4B00A38389 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,7 +180,9 @@
 				DE49FD9E292D1CE100A38389 /* AppDelegate.swift in Sources */,
 				DE49FD91292D1C4B00A38389 /* MainView.swift in Sources */,
 				DE49FD8F292D1C4B00A38389 /* PomodoroTasksApp.swift in Sources */,
+				DEAF632C2964A33200557453 /* AddingNewTaskViewModel.swift in Sources */,
 				DEE6EAEC293E2D1B004BE13F /* MainViewModel.swift in Sources */,
+				DEAF632A2964A32B00557453 /* AddingNewTaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +382,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DEAF632529649E2B00557453 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DEAF632629649E2B00557453 /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DEAF632529649E2B00557453 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE49FD83292D1C4B00A38389 /* Project object */;
 }
