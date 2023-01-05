@@ -8,7 +8,7 @@ final class MainViewModel: ObservableObject {
     let daysOfWeek = Calendar.autoupdatingCurrent.shortWeekdaySymbols
     @Published var dayPickerSelection = 0
     @Published var destination: Destination?
-    @Published var tasks: [String] = []
+    @Published var tasks: [TaskViewModel] = []
 
     init() {
 
@@ -17,7 +17,7 @@ final class MainViewModel: ObservableObject {
     func addNewTaskButtonPressed() {
         let newTaskViewModel = AddingNewTaskViewModel()
         newTaskViewModel.doneHandler = { [weak self] newTaskTitle in
-            self?.tasks.append(newTaskTitle)
+            self?.tasks.append(TaskViewModel(title: newTaskTitle))
             self?.destination = nil
         }
 

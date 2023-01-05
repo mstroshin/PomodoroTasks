@@ -2,14 +2,19 @@ import SwiftUI
 import SwiftUINavigation
 
 struct MainView: View {
-    @StateObject private var vm = MainViewModel()
+    @StateObject private var vm: MainViewModel
+    @EnvironmentObject private var q: MainViewModel
+
+    init(vm: MainViewModel) {
+        self._vm = StateObject(wrappedValue: vm)
+    }
 
     var body: some View {
         VStack {
             weekDaysPicker
 
-            ForEach(vm.tasks, id: \.self) { taskTitle in
-                Text(taskTitle)
+            ForEach(vm.tasks) { taskViewModel in
+                TaskView(vm: taskViewModel)
             }
 
             addNewTaskButton
@@ -38,10 +43,13 @@ struct MainView: View {
                 AddingNewTaskView(vm: destination.wrappedValue)
             }
     }
+
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(vm: MainViewModel())
+            .environmentObject(MainViewModel())
+        MainView(vm: MainViewModel())
     }
 }

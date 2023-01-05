@@ -12,6 +12,10 @@
 		DE49FD93292D1C4B00A38389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE49FD92292D1C4B00A38389 /* Assets.xcassets */; };
 		DE49FD96292D1C4B00A38389 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE49FD95292D1C4B00A38389 /* Preview Assets.xcassets */; };
 		DE49FD9E292D1CE100A38389 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49FD9D292D1CE100A38389 /* AppDelegate.swift */; };
+		DEA3F0EC2967319E0074986A /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3F0EB2967319E0074986A /* TaskView.swift */; };
+		DEA3F0EE296731AA0074986A /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3F0ED296731AA0074986A /* TaskViewModel.swift */; };
+		DEA3F0F1296739C70074986A /* AddingPomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3F0F0296739C70074986A /* AddingPomodoroView.swift */; };
+		DEA3F0F3296739CD0074986A /* AddingPomodoroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3F0F2296739CD0074986A /* AddingPomodoroViewModel.swift */; };
 		DEAF632729649E2B00557453 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = DEAF632629649E2B00557453 /* SwiftUINavigation */; };
 		DEAF632A2964A32B00557453 /* AddingNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF63292964A32B00557453 /* AddingNewTaskView.swift */; };
 		DEAF632C2964A33200557453 /* AddingNewTaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAF632B2964A33200557453 /* AddingNewTaskViewModel.swift */; };
@@ -27,6 +31,10 @@
 		DE49FD97292D1C4B00A38389 /* PomodoroTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroTasks.entitlements; sourceTree = "<group>"; };
 		DE49FD9D292D1CE100A38389 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE49FD9F292D2A6C00A38389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DEA3F0EB2967319E0074986A /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		DEA3F0ED296731AA0074986A /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		DEA3F0F0296739C70074986A /* AddingPomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPomodoroView.swift; sourceTree = "<group>"; };
+		DEA3F0F2296739CD0074986A /* AddingPomodoroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPomodoroViewModel.swift; sourceTree = "<group>"; };
 		DEAF63292964A32B00557453 /* AddingNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewTaskView.swift; sourceTree = "<group>"; };
 		DEAF632B2964A33200557453 /* AddingNewTaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewTaskViewModel.swift; sourceTree = "<group>"; };
 		DEE6EAEB293E2D1B004BE13F /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -63,6 +71,8 @@
 		DE49FD8D292D1C4B00A38389 /* PomodoroTasks */ = {
 			isa = PBXGroup;
 			children = (
+				DEA3F0EF296739B00074986A /* AddingPomodoro */,
+				DEA3F0EA296731630074986A /* Task */,
 				DEE6EAEA293E2CF7004BE13F /* Main */,
 				DEAF63282964A31500557453 /* AddingNewTask */,
 				DE49FD9F292D2A6C00A38389 /* Info.plist */,
@@ -81,6 +91,24 @@
 				DE49FD95292D1C4B00A38389 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DEA3F0EA296731630074986A /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				DEA3F0EB2967319E0074986A /* TaskView.swift */,
+				DEA3F0ED296731AA0074986A /* TaskViewModel.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		DEA3F0EF296739B00074986A /* AddingPomodoro */ = {
+			isa = PBXGroup;
+			children = (
+				DEA3F0F0296739C70074986A /* AddingPomodoroView.swift */,
+				DEA3F0F2296739CD0074986A /* AddingPomodoroViewModel.swift */,
+			);
+			path = AddingPomodoro;
 			sourceTree = "<group>";
 		};
 		DEAF63282964A31500557453 /* AddingNewTask */ = {
@@ -178,10 +206,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE49FD9E292D1CE100A38389 /* AppDelegate.swift in Sources */,
+				DEA3F0EC2967319E0074986A /* TaskView.swift in Sources */,
 				DE49FD91292D1C4B00A38389 /* MainView.swift in Sources */,
 				DE49FD8F292D1C4B00A38389 /* PomodoroTasksApp.swift in Sources */,
 				DEAF632C2964A33200557453 /* AddingNewTaskViewModel.swift in Sources */,
+				DEA3F0F1296739C70074986A /* AddingPomodoroView.swift in Sources */,
+				DEA3F0EE296731AA0074986A /* TaskViewModel.swift in Sources */,
 				DEE6EAEC293E2D1B004BE13F /* MainViewModel.swift in Sources */,
+				DEA3F0F3296739CD0074986A /* AddingPomodoroViewModel.swift in Sources */,
 				DEAF632A2964A32B00557453 /* AddingNewTaskView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
