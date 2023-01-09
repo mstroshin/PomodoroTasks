@@ -1,22 +1,29 @@
 import SwiftUI
+import SwiftUINavigation
 
 struct TaskView: View {
     @StateObject var vm: TaskViewModel
 
     var body: some View {
         HStack {
-            VStack {
+            VStack(alignment: .leading) {
                 Text(vm.title)
-                Button("+") {
 
+                HStack {
+                    ForEach(vm.timers) { timer in
+                        Text("\(timer.time.timeIntervalSince1970)")
+                    }
+
+                    Button("+", action: vm.addingPomodoroButtonPressed)
+                        .popover(
+                            unwrapping: $vm.destination,
+                            case: /TaskViewModel.Destination.addingNewPomodoro
+                        ) { destination in
+                            AddingPomodoroView(vm: destination.wrappedValue)
+                        }
                 }
-//                .popover(
-//                    unwrapping: $vm.destination,
-//                    case: /MainViewModel.Destination.addingNewTask
-//                ) { destination in
-//                    AddingNewTaskView(vm: destination.wrappedValue)
-//                }
             }
+
             Spacer()
         }
     }

@@ -3,7 +3,6 @@ import SwiftUINavigation
 
 struct MainView: View {
     @StateObject private var vm: MainViewModel
-    @EnvironmentObject private var q: MainViewModel
 
     init(vm: MainViewModel) {
         self._vm = StateObject(wrappedValue: vm)
@@ -48,8 +47,6 @@ struct MainView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(vm: MainViewModel())
-            .environmentObject(MainViewModel())
         MainView(vm: MainViewModel())
     }
 }

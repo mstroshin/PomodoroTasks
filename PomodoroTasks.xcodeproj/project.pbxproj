@@ -12,6 +12,7 @@
 		DE49FD93292D1C4B00A38389 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE49FD92292D1C4B00A38389 /* Assets.xcassets */; };
 		DE49FD96292D1C4B00A38389 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE49FD95292D1C4B00A38389 /* Preview Assets.xcassets */; };
 		DE49FD9E292D1CE100A38389 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49FD9D292D1CE100A38389 /* AppDelegate.swift */; };
+		DE77F520296C925A004E91AA /* PomodoroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE77F51F296C925A004E91AA /* PomodoroModel.swift */; };
 		DEA3F0EC2967319E0074986A /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3F0EB2967319E0074986A /* TaskView.swift */; };
 		DEA3F0EE296731AA0074986A /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3F0ED296731AA0074986A /* TaskViewModel.swift */; };
 		DEA3F0F1296739C70074986A /* AddingPomodoroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA3F0F0296739C70074986A /* AddingPomodoroView.swift */; };
@@ -31,6 +32,7 @@
 		DE49FD97292D1C4B00A38389 /* PomodoroTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroTasks.entitlements; sourceTree = "<group>"; };
 		DE49FD9D292D1CE100A38389 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE49FD9F292D2A6C00A38389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DE77F51F296C925A004E91AA /* PomodoroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroModel.swift; sourceTree = "<group>"; };
 		DEA3F0EB2967319E0074986A /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		DEA3F0ED296731AA0074986A /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
 		DEA3F0F0296739C70074986A /* AddingPomodoroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingPomodoroView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				DEA3F0F0296739C70074986A /* AddingPomodoroView.swift */,
 				DEA3F0F2296739CD0074986A /* AddingPomodoroViewModel.swift */,
+				DE77F51F296C925A004E91AA /* PomodoroModel.swift */,
 			);
 			path = AddingPomodoro;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				DE49FD91292D1C4B00A38389 /* MainView.swift in Sources */,
 				DE49FD8F292D1C4B00A38389 /* PomodoroTasksApp.swift in Sources */,
 				DEAF632C2964A33200557453 /* AddingNewTaskViewModel.swift in Sources */,
+				DE77F520296C925A004E91AA /* PomodoroModel.swift in Sources */,
 				DEA3F0F1296739C70074986A /* AddingPomodoroView.swift in Sources */,
 				DEA3F0EE296731AA0074986A /* TaskViewModel.swift in Sources */,
 				DEE6EAEC293E2D1B004BE13F /* MainViewModel.swift in Sources */,
