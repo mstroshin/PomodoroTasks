@@ -7,7 +7,7 @@ struct DayView: View {
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
             VStack {
-                ForEachStore(store.scope(state: \.tasks, action: DayFeature.Action.task(id:action:))) { store in
+                ForEachStore(store.scope(state: \.tasks, action: DayFeature.Action.task)) { store in
                     TaskView(store: store)
                 }
 

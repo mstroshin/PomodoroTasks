@@ -25,15 +25,15 @@ struct TaskView: View {
 //                                )
 //                        }
 
-                        PlusButtonView(didPressAction: { viewStore.send(.startPomodoroPressed) })
+                        PlusButtonView(didPressAction: { viewStore.send(.addPomodoroPressed) })
                             .frame(width: 40, height: 40)
                             .foregroundColor(Color(hex: 0x5D74FC))
-                        //                            .popover(
-                        //                                unwrapping: $viewStore.destination,
-                        //                                case: /TaskViewModel.Destination.addingNewPomodoro
-                        //                            ) { destination in
-                        //                                AddingPomodoroView(vm: destination.wrappedValue)
-                        //                            }
+                            .popover(
+                                store: store.scope(state: \.$addingPomodoro, action: TaskFeature.Action.addingPomodoro),
+                                arrowEdge: .bottom
+                            ) { store in
+                                AddingNewPomodoroView(store: store)
+                            }
                     }
                 }
                 .padding(12)
@@ -92,14 +92,14 @@ struct TaskView: View {
         return formatter.string(from: seconds) ?? "X"
     }
 
-//    private func getPomodoroViewSize(for type: TimerType) -> CGSize {
-//        switch type {
-//        case .inAction:
-//            return CGSize(width: 48, height: 48)
-//        case .break:
-//            return CGSize(width: 4, height: 48)
-//        }
-//    }
+    private func getPomodoroViewSize(for type: PomodoroType) -> CGSize {
+        switch type {
+        case .inAction:
+            return CGSize(width: 48, height: 48)
+        case .break:
+            return CGSize(width: 4, height: 48)
+        }
+    }
 
 }
 

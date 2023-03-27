@@ -3,29 +3,44 @@ import Combine
 import ComposableArchitecture
 
 struct TaskFeature: Reducer {
-    enum Destination: Equatable {
-        case addingNewPomodoro(Int)
-    }
     struct State: Equatable, Identifiable {
         let id = UUID()
         let title: String
-        var destination: Destination?
 //        var pomodoros: IdentifiedArrayOf<PomodoroState> = []
 //        var currentPomodoro: PomodoroState?
-        var isPlaying: Bool = false
+        var isPlaying = false
+
+        @PresentationState var addingPomodoro: AddingNewPomodoroFeature.State?
     }
     enum Action {
         case addPomodoroPressed
         case startPomodoroPressed
+
+        case addingPomodoro(PresentationAction<AddingNewPomodoroFeature.Action>)
     }
 
-    func reduce(into state: inout State, action: Action) -> Effect<Action> {
-        switch action {
-        case .addPomodoroPressed:
-            return .none
+    var body: some ReducerOf<Self> {
+        Reduce { state, action in
+            switch action {
+            case .addPomodoroPressed:
+                state.addingPomodoro = .init()
+                return .none
 
-        case .startPomodoroPressed:
-            return .none
+            case .startPomodoroPressed:
+                return .none
+
+            case .addingPomodoro(.presented(.done)):
+                guard let newPomodoro = state.addingPomodoro else { return .none }
+                state.addingPomodoro = nil
+                return .none
+
+            case .addingPomodoro:
+                return .none
+            }
+        }
+        .ifLet(\.$addingPomodoro, action: /Action.addingPomodoro) {
+            AddingNewPomodoroFeature()
         }
     }
+
 }

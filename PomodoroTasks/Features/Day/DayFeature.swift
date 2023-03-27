@@ -43,7 +43,7 @@ struct DayFeature: Reducer {
                 return .none
             }
         }
-        .forEach(\.tasks, action: /Action.task(id:action:)) {
+        .forEach(\.tasks, action: /Action.task) {
             TaskFeature()
         }
         .ifLet(\.$addingNewTask, action: /Action.addingNewTask) {
