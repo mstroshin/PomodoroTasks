@@ -7,19 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE3CF2A429D198E7001A9604 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CF2A329D198E7001A9604 /* Extensions.swift */; };
 		DE9ADD7A29A7C2B900836F14 /* PomodoroTasksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADD7929A7C2B900836F14 /* PomodoroTasksApp.swift */; };
-		DE9ADD7C29A7C2B900836F14 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADD7B29A7C2B900836F14 /* ContentView.swift */; };
+		DE9ADD7C29A7C2B900836F14 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADD7B29A7C2B900836F14 /* MainView.swift */; };
 		DE9ADD7E29A7C2C000836F14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9ADD7D29A7C2C000836F14 /* Assets.xcassets */; };
 		DE9ADD8129A7C2C000836F14 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9ADD8029A7C2C000836F14 /* Preview Assets.xcassets */; };
+		DE9ADD8A29A7C3CE00836F14 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = DE9ADD8929A7C3CE00836F14 /* ComposableArchitecture */; };
+		DE9ADD8D29A7C44700836F14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADD8C29A7C44700836F14 /* AppDelegate.swift */; };
+		DE9ADD9129A7C4C200836F14 /* MainFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADD9029A7C4C200836F14 /* MainFeature.swift */; };
+		DE9ADD9429A7C82900836F14 /* PlusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADD9329A7C82900836F14 /* PlusButtonView.swift */; };
+		DE9ADD9A29A7CA4500836F14 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADD9929A7CA4500836F14 /* DayView.swift */; };
+		DE9ADD9C29A7CA4C00836F14 /* DayFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADD9B29A7CA4C00836F14 /* DayFeature.swift */; };
+		DE9ADDA129A7CE6A00836F14 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = DE9ADDA029A7CE6A00836F14 /* SwiftDate */; };
+		DE9ADDA429A7D2EF00836F14 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADDA329A7D2EF00836F14 /* TaskView.swift */; };
+		DE9ADDA629A7D36600836F14 /* TaskFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADDA529A7D36600836F14 /* TaskFeature.swift */; };
+		DE9ADDA929A7D55E00836F14 /* SwiftUINavigation in Frameworks */ = {isa = PBXBuildFile; productRef = DE9ADDA829A7D55E00836F14 /* SwiftUINavigation */; };
+		DE9ADDAC29A7D5F500836F14 /* AddingNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADDAB29A7D5F500836F14 /* AddingNewTaskView.swift */; };
+		DE9ADDAE29A7D5FE00836F14 /* AddingNewTaskFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9ADDAD29A7D5FE00836F14 /* AddingNewTaskFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE3CF2A329D198E7001A9604 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		DE9ADD7629A7C2B900836F14 /* PomodoroTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomodoroTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9ADD7929A7C2B900836F14 /* PomodoroTasksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomodoroTasksApp.swift; sourceTree = "<group>"; };
-		DE9ADD7B29A7C2B900836F14 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE9ADD7B29A7C2B900836F14 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DE9ADD7D29A7C2C000836F14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE9ADD8029A7C2C000836F14 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DE9ADD8229A7C2C000836F14 /* PomodoroTasks.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomodoroTasks.entitlements; sourceTree = "<group>"; };
+		DE9ADD8C29A7C44700836F14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE9ADD9029A7C4C200836F14 /* MainFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFeature.swift; sourceTree = "<group>"; };
+		DE9ADD9329A7C82900836F14 /* PlusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButtonView.swift; sourceTree = "<group>"; };
+		DE9ADD9929A7CA4500836F14 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		DE9ADD9B29A7CA4C00836F14 /* DayFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayFeature.swift; sourceTree = "<group>"; };
+		DE9ADDA329A7D2EF00836F14 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		DE9ADDA529A7D36600836F14 /* TaskFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFeature.swift; sourceTree = "<group>"; };
+		DE9ADDAB29A7D5F500836F14 /* AddingNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewTaskView.swift; sourceTree = "<group>"; };
+		DE9ADDAD29A7D5FE00836F14 /* AddingNewTaskFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingNewTaskFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +50,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE9ADDA129A7CE6A00836F14 /* SwiftDate in Frameworks */,
+				DE9ADD8A29A7C3CE00836F14 /* ComposableArchitecture in Frameworks */,
+				DE9ADDA929A7D55E00836F14 /* SwiftUINavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,10 +78,10 @@
 		DE9ADD7829A7C2B900836F14 /* PomodoroTasks */ = {
 			isa = PBXGroup;
 			children = (
-				DE9ADD7929A7C2B900836F14 /* PomodoroTasksApp.swift */,
-				DE9ADD7B29A7C2B900836F14 /* ContentView.swift */,
-				DE9ADD7D29A7C2C000836F14 /* Assets.xcassets */,
-				DE9ADD8229A7C2C000836F14 /* PomodoroTasks.entitlements */,
+				DE9ADD8B29A7C3FF00836F14 /* App */,
+				DE9ADD8E29A7C49A00836F14 /* Features */,
+				DE9ADD9229A7C81300836F14 /* CommonViews */,
+				DE9ADD9529A7C83600836F14 /* Utils */,
 				DE9ADD7F29A7C2C000836F14 /* Preview Content */,
 			);
 			path = PomodoroTasks;
@@ -67,6 +93,80 @@
 				DE9ADD8029A7C2C000836F14 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE9ADD8B29A7C3FF00836F14 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADD8229A7C2C000836F14 /* PomodoroTasks.entitlements */,
+				DE9ADD7D29A7C2C000836F14 /* Assets.xcassets */,
+				DE9ADD7929A7C2B900836F14 /* PomodoroTasksApp.swift */,
+				DE9ADD8C29A7C44700836F14 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DE9ADD8E29A7C49A00836F14 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADDAA29A7D5E500836F14 /* AddingNewTask */,
+				DE9ADD8F29A7C4A600836F14 /* Main */,
+				DE9ADD9829A7CA3400836F14 /* Day */,
+				DE9ADDA229A7D2E000836F14 /* Task */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		DE9ADD8F29A7C4A600836F14 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADD7B29A7C2B900836F14 /* MainView.swift */,
+				DE9ADD9029A7C4C200836F14 /* MainFeature.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DE9ADD9229A7C81300836F14 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADD9329A7C82900836F14 /* PlusButtonView.swift */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		DE9ADD9529A7C83600836F14 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE3CF2A329D198E7001A9604 /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DE9ADD9829A7CA3400836F14 /* Day */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADD9929A7CA4500836F14 /* DayView.swift */,
+				DE9ADD9B29A7CA4C00836F14 /* DayFeature.swift */,
+			);
+			path = Day;
+			sourceTree = "<group>";
+		};
+		DE9ADDA229A7D2E000836F14 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADDA329A7D2EF00836F14 /* TaskView.swift */,
+				DE9ADDA529A7D36600836F14 /* TaskFeature.swift */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		DE9ADDAA29A7D5E500836F14 /* AddingNewTask */ = {
+			isa = PBXGroup;
+			children = (
+				DE9ADDAB29A7D5F500836F14 /* AddingNewTaskView.swift */,
+				DE9ADDAD29A7D5FE00836F14 /* AddingNewTaskFeature.swift */,
+			);
+			path = AddingNewTask;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +185,11 @@
 			dependencies = (
 			);
 			name = PomodoroTasks;
+			packageProductDependencies = (
+				DE9ADD8929A7C3CE00836F14 /* ComposableArchitecture */,
+				DE9ADDA029A7CE6A00836F14 /* SwiftDate */,
+				DE9ADDA829A7D55E00836F14 /* SwiftUINavigation */,
+			);
 			productName = PomodoroTasks;
 			productReference = DE9ADD7629A7C2B900836F14 /* PomodoroTasks.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +218,11 @@
 				Base,
 			);
 			mainGroup = DE9ADD6D29A7C2B900836F14;
+			packageReferences = (
+				DE9ADD8829A7C3CE00836F14 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				DE9ADD9F29A7CE6A00836F14 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				DE9ADDA729A7D55E00836F14 /* XCRemoteSwiftPackageReference "swiftui-navigation" */,
+			);
 			productRefGroup = DE9ADD7729A7C2B900836F14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,7 +249,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE9ADD7C29A7C2B900836F14 /* ContentView.swift in Sources */,
+				DE9ADD9A29A7CA4500836F14 /* DayView.swift in Sources */,
+				DE9ADD8D29A7C44700836F14 /* AppDelegate.swift in Sources */,
+				DE9ADDAE29A7D5FE00836F14 /* AddingNewTaskFeature.swift in Sources */,
+				DE9ADD9129A7C4C200836F14 /* MainFeature.swift in Sources */,
+				DE9ADDA429A7D2EF00836F14 /* TaskView.swift in Sources */,
+				DE9ADDAC29A7D5F500836F14 /* AddingNewTaskView.swift in Sources */,
+				DE9ADDA629A7D36600836F14 /* TaskFeature.swift in Sources */,
+				DE9ADD7C29A7C2B900836F14 /* MainView.swift in Sources */,
+				DE3CF2A429D198E7001A9604 /* Extensions.swift in Sources */,
+				DE9ADD9C29A7CA4C00836F14 /* DayFeature.swift in Sources */,
+				DE9ADD9429A7C82900836F14 /* PlusButtonView.swift in Sources */,
 				DE9ADD7A29A7C2B900836F14 /* PomodoroTasksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,7 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PomodoroTasks/PomodoroTasks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PomodoroTasks/App/PomodoroTasks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -292,7 +412,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = PomodoroTasks/PomodoroTasks.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PomodoroTasks/App/PomodoroTasks.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -336,6 +456,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE9ADD8829A7C3CE00836F14 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				branch = prerelease/1.0;
+				kind = branch;
+			};
+		};
+		DE9ADD9F29A7CE6A00836F14 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		DE9ADDA729A7D55E00836F14 /* XCRemoteSwiftPackageReference "swiftui-navigation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swiftui-navigation";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE9ADD8929A7C3CE00836F14 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE9ADD8829A7C3CE00836F14 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		DE9ADDA029A7CE6A00836F14 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE9ADD9F29A7CE6A00836F14 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		DE9ADDA829A7D55E00836F14 /* SwiftUINavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE9ADDA729A7D55E00836F14 /* XCRemoteSwiftPackageReference "swiftui-navigation" */;
+			productName = SwiftUINavigation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE9ADD6E29A7C2B900836F14 /* Project object */;
 }
