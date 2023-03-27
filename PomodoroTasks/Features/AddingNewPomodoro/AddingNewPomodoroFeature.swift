@@ -27,6 +27,7 @@ struct AddingNewPomodoroFeature: Reducer {
         }
     }
     enum Action {
+        case onAppear
         case selectedType(PomodoroType)
         case typeTime(String)
         case done
@@ -34,6 +35,10 @@ struct AddingNewPomodoroFeature: Reducer {
 
     func reduce(into state: inout State, action: Action) -> Effect<Action> {
         switch action {
+        case .onAppear:
+            state.timeInMinutes = state.defaultTimeInMinutes
+            return .none
+
         case let .selectedType(type):
             state.type = type
             return .none

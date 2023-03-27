@@ -6,8 +6,8 @@ struct TaskFeature: Reducer {
     struct State: Equatable, Identifiable {
         let id = UUID()
         let title: String
-//        var pomodoros: IdentifiedArrayOf<PomodoroState> = []
-//        var currentPomodoro: PomodoroState?
+        var pomodoros: IdentifiedArrayOf<PomodoroTimerState> = []
+
         var isPlaying = false
 
         @PresentationState var addingPomodoro: AddingNewPomodoroFeature.State?
@@ -31,6 +31,11 @@ struct TaskFeature: Reducer {
 
             case .addingPomodoro(.presented(.done)):
                 guard let newPomodoro = state.addingPomodoro else { return .none }
+                let pomodoro = PomodoroTimerState(
+                    type: newPomodoro.type,
+                    initialTimeInMinutes: newPomodoro.timeInMinutes ?? newPomodoro.defaultTimeInMinutes
+                )
+                state.pomodoros.append(pomodoro)
                 state.addingPomodoro = nil
                 return .none
 

@@ -17,13 +17,13 @@ struct TaskView: View {
                     }
 
                     HStack {
-//                        ForEach(viewStore.pomodoros) { pomodoroState in
-//                            PomodoroTimerView(state: pomodoroState)
-//                                .frame(
-//                                    width: getPomodoroViewSize(for: pomodoroState.type).width,
-//                                    height: getPomodoroViewSize(for: pomodoroState.type).height
-//                                )
-//                        }
+                        ForEach(viewStore.pomodoros) { pomodoroState in
+                            PomodoroTimerView(state: pomodoroState)
+                                .frame(
+                                    width: getPomodoroViewSize(for: pomodoroState.type).width,
+                                    height: getPomodoroViewSize(for: pomodoroState.type).height
+                                )
+                        }
 
                         PlusButtonView(didPressAction: { viewStore.send(.addPomodoroPressed) })
                             .frame(width: 40, height: 40)

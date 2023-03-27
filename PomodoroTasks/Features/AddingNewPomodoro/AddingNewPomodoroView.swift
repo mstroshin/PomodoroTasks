@@ -27,14 +27,16 @@ struct AddingNewPomodoroView: View {
                     }, send: AddingNewPomodoroFeature.Action.typeTime)
                 )
                 .multilineTextAlignment(.center)
-                .scaledToFit()
-                .frame(maxWidth: 100)
+                .frame(width: 50)
 
                 Button("Done", action: { viewStore.send(.done) })
                     .disabled(!viewStore.isTimeValid)
             }
             .padding(16)
             .frame(width: 200)
+            .onAppear {
+                viewStore.send(.onAppear)
+            }
         }
     }
 
