@@ -19,12 +19,20 @@ struct MainFeature: Reducer {
                 return .none
 
             case let .dayPressed(dayId):
+                state.days[id: state.selectedDay.id] = state.selectedDay
                 state.selectedDay = state.days[id: dayId]!
+                return .none
+
+            case .day(.addingNewTask(.dismiss)):
                 return .none
 
             case .day:
                 return .none
             }
+        }
+
+        Scope(state: \.selectedDay, action: /Action.day) {
+            DayFeature()
         }
     }
     

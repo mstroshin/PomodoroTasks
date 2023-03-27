@@ -11,13 +11,15 @@ struct DayFeature: Reducer {
             date.weekdayName(.short)
         }
 
-        var tasks: [TaskFeature.State] = []
+        var tasks: IdentifiedArrayOf<TaskFeature.State> = []
 
         @PresentationState var addingNewTask: AddingNewTaskFeature.State?
     }
     enum Action {
         case addTaskPressed
         case addingNewTask(PresentationAction<AddingNewTaskFeature.Action>)
+
+        case task(id: TaskFeature.State.ID, action: TaskFeature.Action)
     }
 
     var body: some ReducerOf<Self> {
@@ -27,20 +29,22 @@ struct DayFeature: Reducer {
                 state.addingNewTask = .init()
                 return .none
 
-//            case let .addingNewTask(.presented(action)):
-//                switch action {
-//                case .done:
-//                    guard let addingNewTask = state.addingNewTask else { return .none }
-//                    let newTask = TaskFeature.State(title: addingNewTask.title)
-//                    state.tasks.append(newTask)
-//                    return .none
-//
-//                case .type:
-//                    return .none
-//                }
+            case .addingNewTask(.presented(.done)):
+                guard let addingNewTask = state.addingNewTask else { return .none }
+                let newTask = TaskFeature.State(title: addingNewTask.title)
+                state.tasks.append(newTask)
+                state.addingNewTask = nil
+                return .none
+
             case .addingNewTask:
                 return .none
+
+            case .task:
+                return .none
             }
+        }
+        .forEach(\.tasks, action: /Action.task(id:action:)) {
+            TaskFeature()
         }
         .ifLet(\.$addingNewTask, action: /Action.addingNewTask) {
             AddingNewTaskFeature()
