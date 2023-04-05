@@ -48,6 +48,9 @@ struct PomodoroTimerView: View {
 
     private var actionTimerView: some View {
         ZStack {
+            // To make background is touchable
+            Color.clear.contentShape(Circle())
+
             Circle()
                 .stroke(Color("circleStrokeBg"), lineWidth: lineWidth)
 

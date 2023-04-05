@@ -69,6 +69,12 @@ struct MainFeature: Reducer {
                 }
                 return .none
 
+            case let .day(.removeTask(id)):
+                if state.selectedDay.tasks[id: id]?.isPlaying == true {
+                    return .cancel(id: TimerID.self)
+                }
+                return .none
+
             case .day:
                 return .none
 

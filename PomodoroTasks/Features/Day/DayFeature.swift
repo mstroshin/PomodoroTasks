@@ -16,6 +16,7 @@ struct DayFeature: Reducer {
         @PresentationState var addingNewTask: AddingNewTaskFeature.State?
     }
     enum Action {
+        case removeTask(id: TaskFeature.State.ID)
         case addTaskPressed
         case addingNewTask(PresentationAction<AddingNewTaskFeature.Action>)
 
@@ -25,6 +26,10 @@ struct DayFeature: Reducer {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case let .removeTask(id):
+                state.tasks.remove(id: id)
+                return .none
+
             case .addTaskPressed:
                 state.addingNewTask = .init()
                 return .none

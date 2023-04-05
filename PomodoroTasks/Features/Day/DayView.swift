@@ -9,6 +9,19 @@ struct DayView: View {
             VStack {
                 ForEachStore(store.scope(state: \.tasks, action: DayFeature.Action.task)) { store in
                     TaskView(store: store)
+                        .contextMenu {
+                            Button {
+//                                viewStore.send(.removePomodoro(id: pomodoroState.id))
+                            } label: {
+                                Label("Rename", systemImage: "pencil")
+                            }
+
+                            Button(role: .destructive) {
+                                viewStore.send(.removeTask(id: ViewStore(store, observe: \.id).state))
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
                 }
 
                 PlusButtonView(didPressAction: { viewStore.send(.addTaskPressed) })
