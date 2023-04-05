@@ -40,10 +40,10 @@ struct TaskView: View {
 
                 Spacer()
 
-//                if let currentPomodoro = viewStore.currentPomodoro {
-//                    playButtonView(with: currentPomodoro)
-//                        .frame(width: 80)
-//                }
+                if let id = viewStore.currentPomodoroId, let currentPomodoro = viewStore.pomodoros[id: id] {
+                    playButtonView(with: currentPomodoro, viewStore: viewStore)
+                        .frame(width: 80)
+                }
             }
             .background {
                 Color("bg")
@@ -52,35 +52,37 @@ struct TaskView: View {
         }
     }
 
-//    private func playButtonView(with currentPomodoro: PomodoroState, viewStore: ViewStore) -> some View {
-//        let color = currentPomodoro.type == .inAction ? Color("circleStrokeFg") : Color("breakLineFg")
-//        let formattedTime = format(minutes: currentPomodoro.initialTimeInMinutes, progress: currentPomodoro.progress)
-//        let buttonIcon  = Image(vm.isPlaying ? "pause_icon" : "play_icon")
-//
-//        return ZStack {
-//            Color.white
-//                .shadow(color: Color(hex: 0x303544, alpha: 0.12), radius: 10, x: 0, y: 0)
-//
-//            VStack {
-//                ZStack {
-//                    color
-//                        .frame(width: 48, height: 48)
-//                        .cornerRadius(12)
-//
-//                    buttonIcon
-//                        .frame(width: 20, height: 20)
-//                }
-//                .onTapGesture(perform: vm.playButtonPressed)
-//
-//                if vm.isPlaying {
-//                    Text(formattedTime)
-//                        .foregroundColor(color)
-//                        .font(.system(size: 14, weight: .medium))
-//                        .transition(.move(edge: .top))
-//                }
-//            }
-//        }
-//    }
+    private func playButtonView(with currentPomodoro: PomodoroTimerState, viewStore: ViewStoreOf<TaskFeature>) -> some View {
+        let color = currentPomodoro.type == .inAction ? Color("circleStrokeFg") : Color("breakLineFg")
+        let formattedTime = format(minutes: currentPomodoro.initialTimeInMinutes, progress: currentPomodoro.progress)
+        let buttonIcon  = Image(viewStore.isPlaying ? "pause_icon" : "play_icon")
+
+        return ZStack {
+            Color.white
+                .shadow(color: Color(hex: 0x303544, alpha: 0.12), radius: 10, x: 0, y: 0)
+
+            VStack {
+                ZStack {
+                    color
+                        .frame(width: 48, height: 48)
+                        .cornerRadius(12)
+
+                    buttonIcon
+                        .frame(width: 20, height: 20)
+                }
+                .onTapGesture {
+                    viewStore.send(.startPomodoroPressed)
+                }
+
+                if viewStore.isPlaying {
+                    Text(formattedTime)
+                        .foregroundColor(color)
+                        .font(.system(size: 14, weight: .medium))
+                        .transition(.move(edge: .top))
+                }
+            }
+        }
+    }
 
     private func format(minutes: Int, progress: Double) -> String {
         let seconds = Double(minutes * 60) *  (1.0 - progress)

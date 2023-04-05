@@ -8,6 +8,10 @@ struct TaskFeature: Reducer {
         let title: String
         var pomodoros: IdentifiedArrayOf<PomodoroTimerState> = []
 
+        var currentPomodoroId: PomodoroTimerState.ID? {
+            pomodoros.first(where: { !$0.isCompleted })?.id
+        }
+
         var isPlaying = false
 
         @PresentationState var addingPomodoro: AddingNewPomodoroFeature.State?

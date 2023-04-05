@@ -43,4 +43,8 @@ extension Date {
         return weekDates.map { $0.date }
     }
 
+    static var weekdayNames: [String] {
+        weekDates.map { $0.weekdayName(.short) }
+    }
+
 }

@@ -5,8 +5,12 @@ struct PomodoroTimerState: Equatable, Identifiable {
     let id = UUID()
     let type: PomodoroType
     let initialTimeInMinutes: Int
+    var timePassedInSeconds: Int = 0
 
-    var progress = 0.0 // 0.0 to 1.0
+    var progress: Double {
+        if initialTimeInMinutes == 0 { return 0 }
+        return Double(timePassedInSeconds) / (Double(initialTimeInMinutes) * 60.0)
+    }
     var isCompleted: Bool {
         progress >= 1.0
     }
@@ -91,8 +95,8 @@ struct PomodoroTimerView: View {
 
 struct PomodoroTimerView_Previews: PreviewProvider {
     static var previews: some View {
-        let actionState = PomodoroTimerState(type: .inAction, initialTimeInMinutes: 2, progress: 0.4)
-        let breakState = PomodoroTimerState(type: .inAction, initialTimeInMinutes: 2, progress: 0.4)
+        let actionState = PomodoroTimerState(type: .inAction, initialTimeInMinutes: 2, timePassedInSeconds: 30)
+        let breakState = PomodoroTimerState(type: .inAction, initialTimeInMinutes: 2, timePassedInSeconds: 30)
 
         Group {
             PomodoroTimerView(state: actionState)
