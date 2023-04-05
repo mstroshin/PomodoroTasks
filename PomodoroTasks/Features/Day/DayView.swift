@@ -9,6 +9,7 @@ struct DayView: View {
             VStack {
                 ForEachStore(store.scope(state: \.tasks, action: DayFeature.Action.task)) { store in
                     TaskView(store: store)
+                        .padding(.top, 12)
                 }
 
                 PlusButtonView(didPressAction: { viewStore.send(.addTaskPressed) })

@@ -7,7 +7,7 @@ struct TaskView: View {
 
     var body: some View {
         WithViewStore(store, observe: { $0 }) { viewStore in
-            HStack {
+            HStack(spacing: 0) {
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Image("pomodoro_icon")
@@ -23,36 +23,36 @@ struct TaskView: View {
                             }
                     }
 
-                    HStack {
-                        ForEach(viewStore.pomodoros) { pomodoroState in
-                            PomodoroTimerView(state: pomodoroState)
-                                .frame(
-                                    width: getPomodoroViewSize(for: pomodoroState.type).width,
-                                    height: getPomodoroViewSize(for: pomodoroState.type).height
-                                )
-                                .contextMenu {
-                                    Button(role: .destructive) {
-                                        viewStore.send(.removePomodoro(id: pomodoroState.id))
-                                    } label: {
-                                        Label("Delete", systemImage: "trash")
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            ForEach(viewStore.pomodoros) { pomodoroState in
+                                PomodoroTimerView(state: pomodoroState)
+                                    .frame(
+                                        width: getPomodoroViewSize(for: pomodoroState.type).width,
+                                        height: getPomodoroViewSize(for: pomodoroState.type).height
+                                    )
+                                    .contextMenu {
+                                        Button(role: .destructive) {
+                                            viewStore.send(.removePomodoro(id: pomodoroState.id))
+                                        } label: {
+                                            Label("Delete timer", systemImage: "trash")
+                                        }
                                     }
+                            }
+
+                            PlusButtonView(didPressAction: { viewStore.send(.addPomodoroPressed) })
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(Color(hex: 0x5D74FC))
+                                .popover(
+                                    store: store.scope(state: \.$addingPomodoro, action: TaskFeature.Action.addingPomodoro),
+                                    arrowEdge: .bottom
+                                ) { store in
+                                    AddingNewPomodoroView(store: store)
                                 }
                         }
-
-                        PlusButtonView(didPressAction: { viewStore.send(.addPomodoroPressed) })
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(Color(hex: 0x5D74FC))
-                            .popover(
-                                store: store.scope(state: \.$addingPomodoro, action: TaskFeature.Action.addingPomodoro),
-                                arrowEdge: .bottom
-                            ) { store in
-                                AddingNewPomodoroView(store: store)
-                            }
                     }
                 }
-                .padding(12)
-
-                Spacer()
+                .padding(EdgeInsets(top: 12, leading: 12, bottom: 12, trailing: 0))
 
                 if let id = viewStore.currentPomodoroId, let currentPomodoro = viewStore.pomodoros[id: id] {
                     playButtonView(with: currentPomodoro, viewStore: viewStore)
@@ -63,6 +63,7 @@ struct TaskView: View {
                 Color("bg")
             }
             .cornerRadius(12)
+            .frame(height: 100)
             .onTapGesture {
                 titleFocusState = false
             }
@@ -70,7 +71,7 @@ struct TaskView: View {
                 Button(role: .destructive) {
                     viewStore.send(.removePressed)
                 } label: {
-                    Label("Delete", systemImage: "trash")
+                    Label("Delete task", systemImage: "trash")
                 }
             }
         }
