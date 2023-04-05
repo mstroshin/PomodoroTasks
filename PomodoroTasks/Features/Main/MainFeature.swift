@@ -34,10 +34,6 @@ struct MainFeature: Reducer {
     private enum TimerID {}
 
     var body: some ReducerOf<Self> {
-        Scope(state: \.selectedDay, action: /Action.day) {
-            DayFeature()
-        }
-
         Reduce { state, action in
             switch action {
             case .onAppear:
@@ -67,6 +63,12 @@ struct MainFeature: Reducer {
                     }
                 }.cancellable(id: TimerID.self, cancelInFlight: true)
 
+            case let .day(.task(taskId, .removePomodoro(pomodoroId))):
+                if state.selectedDay.tasks[id: taskId]?.currentPomodoroId == pomodoroId {
+                    return .cancel(id: TimerID.self)
+                }
+                return .none
+
             case .day:
                 return .none
 
@@ -82,6 +84,10 @@ struct MainFeature: Reducer {
                 }
                 return .none
             }
+        }
+
+        Scope(state: \.selectedDay, action: /Action.day) {
+            DayFeature()
         }
     }
     

@@ -20,53 +20,5 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C9BAB146-165C-470C-B8FD-C44FF3BE8582"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PomodoroTasks/Features/Main/MainFeature.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "C9BAB146-165C-470C-B8FD-C44FF3BE8582 - 79324137eb6571dd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (inout PomodoroTasks.MainFeature.State, PomodoroTasks.MainFeature.Action) -&gt; ComposableArchitecture.EffectPublisher&lt;PomodoroTasks.MainFeature.Action, Swift.Never&gt; in PomodoroTasks.MainFeature.body.getter : some"
-                  moduleName = "PomodoroTasks"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mxm/Workspace/Pets/PomodoroTasks/PomodoroTasks/Features/Main/MainFeature.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "4968">
-               </Location>
-               <Location
-                  uuid = "C9BAB146-165C-470C-B8FD-C44FF3BE8582 - 7d9d6ae9fd2dccf7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (inout PomodoroTasks.MainFeature.State, PomodoroTasks.MainFeature.Action) -&gt; ComposableArchitecture.EffectPublisher&lt;PomodoroTasks.MainFeature.Action, Swift.Never&gt; in PomodoroTasks.MainFeature.body.getter : some"
-                  moduleName = "PomodoroTasks"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mxm/Workspace/Pets/PomodoroTasks/PomodoroTasks/Features/Main/MainFeature.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "4948">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

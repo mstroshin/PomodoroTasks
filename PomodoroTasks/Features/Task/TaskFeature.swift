@@ -20,6 +20,7 @@ struct TaskFeature: Reducer {
         case addPomodoroPressed
         case startPomodoroPressed
 
+        case removePomodoro(id: PomodoroTimerState.ID)
         case addingPomodoro(PresentationAction<AddingNewPomodoroFeature.Action>)
     }
 
@@ -31,6 +32,13 @@ struct TaskFeature: Reducer {
                 return .none
 
             case .startPomodoroPressed:
+                return .none
+
+            case let .removePomodoro(id):
+                if state.currentPomodoroId == id {
+                    state.isPlaying = false
+                }
+                state.pomodoros.remove(id: id)
                 return .none
 
             case .addingPomodoro(.presented(.done)):

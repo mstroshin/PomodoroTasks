@@ -23,6 +23,13 @@ struct TaskView: View {
                                     width: getPomodoroViewSize(for: pomodoroState.type).width,
                                     height: getPomodoroViewSize(for: pomodoroState.type).height
                                 )
+                                .contextMenu {
+                                    Button(role: .destructive) {
+                                        viewStore.send(.removePomodoro(id: pomodoroState.id))
+                                    } label: {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                }
                         }
 
                         PlusButtonView(didPressAction: { viewStore.send(.addPomodoroPressed) })
