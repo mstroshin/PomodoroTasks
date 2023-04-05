@@ -5,7 +5,9 @@ import ComposableArchitecture
 struct TaskFeature: Reducer {
     struct State: Equatable, Identifiable {
         let id = UUID()
-        let title: String
+
+        var title: String
+
         var pomodoros: IdentifiedArrayOf<PomodoroTimerState> = []
 
         var currentPomodoroId: PomodoroTimerState.ID? {
@@ -17,6 +19,10 @@ struct TaskFeature: Reducer {
         @PresentationState var addingPomodoro: AddingNewPomodoroFeature.State?
     }
     enum Action {
+        case titleTyped(String)
+
+        case removePressed
+
         case addPomodoroPressed
         case startPomodoroPressed
 
@@ -27,6 +33,13 @@ struct TaskFeature: Reducer {
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case let .titleTyped(title):
+                state.title = title
+                return .none
+
+            case .removePressed:
+                return .none
+
             case .addPomodoroPressed:
                 state.addingPomodoro = .init()
                 return .none

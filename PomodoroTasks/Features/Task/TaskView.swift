@@ -2,6 +2,7 @@ import SwiftUI
 import ComposableArchitecture
 
 struct TaskView: View {
+    @FocusState var titleFocusState: Bool
     let store: StoreOf<TaskFeature>
 
     var body: some View {
@@ -11,9 +12,15 @@ struct TaskView: View {
                     HStack {
                         Image("pomodoro_icon")
                             .frame(width: 32, height: 32)
-                        Text(viewStore.title)
+
+                        TextField("", text: viewStore.binding(get: \.title, send: TaskFeature.Action.titleTyped))
+                            .textFieldStyle(.plain)
+                            .focused($titleFocusState)
                             .font(.system(size: 20, weight: .medium))
                             .foregroundColor(Color.black)
+                            .onSubmit {
+                                titleFocusState = false
+                            }
                     }
 
                     HStack {
@@ -56,6 +63,16 @@ struct TaskView: View {
                 Color("bg")
             }
             .cornerRadius(12)
+            .onTapGesture {
+                titleFocusState = false
+            }
+            .contextMenu {
+                Button(role: .destructive) {
+                    viewStore.send(.removePressed)
+                } label: {
+                    Label("Delete", systemImage: "trash")
+                }
+            }
         }
     }
 
