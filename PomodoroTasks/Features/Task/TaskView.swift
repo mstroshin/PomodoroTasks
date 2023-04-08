@@ -21,6 +21,10 @@ struct TaskView: View {
                             .onSubmit {
                                 titleFocusState = false
                             }
+
+
+
+                        
                     }
 
                     ScrollView(.horizontal, showsIndicators: false) {
